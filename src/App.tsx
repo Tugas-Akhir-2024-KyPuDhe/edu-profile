@@ -7,17 +7,9 @@ function App() {
     <>
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/tes" element={<TesPage />} />
       </Routes>
     </>
   );
 }
 
 export default App;
-
-export const TesPage = () => {
-  return (
-    <div>App</div>
-  )
-}
-
