@@ -39,7 +39,7 @@ const navigation = [
   { name: "Tentang Sekolah", href: "#", children: [] },
 ];
 
-export default () => {
+export const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   return (
     <header className="absolute inset-x-0 top-0 z-50 bg-white">

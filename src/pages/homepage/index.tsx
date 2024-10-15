@@ -1,6 +1,5 @@
-import Footer from "../../components/footer";
-import Header from "../../components/header";
-import Body from "../../features/homepage/body";
+import {Header, Footer} from "../../components";
+import {Body} from "../../features/homepage";
 
 export const HomePage = () => {
   return (

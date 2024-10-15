@@ -1,4 +1,4 @@
-export default () => {
+export const Footer = () => {
   return (
     <footer className="rounded-lg shadow m-4 bg-gray-800">
       <div className="flex items-center justify-between p-6 lg:px-8">
