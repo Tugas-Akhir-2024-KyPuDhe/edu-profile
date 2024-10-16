@@ -1,5 +1,5 @@
 import { Footer } from "flowbite-react";
-import { BsDribbble, BsFacebook, BsGithub, BsInstagram, BsTwitter } from "react-icons/bs";
+import { BsFacebook, BsInstagram, BsTwitter } from "react-icons/bs";
 
 export function MyFooter() {
   return (
@@ -40,7 +40,11 @@ export function MyFooter() {
         </div>
         <Footer.Divider />
         <div className="w-full sm:flex sm:items-center sm:justify-between">
-          <Footer.Copyright href="#" by="SMK Negeri 1 Lumban Julu" year={new Date().getFullYear()} />
+          <Footer.Copyright
+            href="#"
+            by="SMK Negeri 1 Lumban Julu"
+            year={new Date().getFullYear()}
+          />
           <div className="mt-4 flex space-x-6 sm:mt-0 sm:justify-center">
             <Footer.Icon href="#" icon={BsFacebook} />
             <Footer.Icon href="#" icon={BsInstagram} />
