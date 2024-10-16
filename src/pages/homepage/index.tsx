@@ -1,4 +1,4 @@
-import {Header, Footer} from "../../components";
+import {Header, MyFooter} from "../../components";
 import {Body} from "../../features/homepage";
 
 export const HomePage = () => {
@@ -6,7 +6,7 @@ export const HomePage = () => {
     <>
       <Header />
       <Body />
-      <Footer />
+      <MyFooter />
     </>
   );
 };

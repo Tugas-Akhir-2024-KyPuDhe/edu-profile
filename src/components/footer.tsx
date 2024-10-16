@@ -1,33 +1,53 @@
-export const Footer = () => {
+import { Footer } from "flowbite-react";
+import { BsDribbble, BsFacebook, BsGithub, BsInstagram, BsTwitter } from "react-icons/bs";
+
+export function MyFooter() {
   return (
-    <footer className="rounded-lg shadow m-4 bg-gray-800">
-      <div className="flex items-center justify-between p-6 lg:px-8">
-        <span className="text-sm sm:text-center text-gray-400">
-          © 2023 SMK Negeri 1 Lumban Julu. All Rights Reserved.
-        </span>
-        <ul className="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-400 sm:mt-0">
-          <li>
-            <a href="#" className="hover:underline me-4 md:me-6">
-              About
-            </a>
-          </li>
-          <li>
-            <a href="#" className="hover:underline me-4 md:me-6">
-              Privacy Policy
-            </a>
-          </li>
-          <li>
-            <a href="#" className="hover:underline me-4 md:me-6">
-              Licensing
-            </a>
-          </li>
-          <li>
-            <a href="#" className="hover:underline">
-              Contact
-            </a>
-          </li>
-        </ul>
+    <Footer container>
+      <div className="w-full bg-dark">
+        <div className="grid w-full justify-between sm:flex sm:justify-between md:flex md:grid-cols-1">
+          <div>
+            <Footer.Brand
+              href="https://flowbite.com"
+              src="https://flowbite.com/docs/images/logo.svg"
+              alt="Logo"
+              name="SMK Negeri 1 Lumban Julu"
+            />
+          </div>
+          <div className="grid grid-cols-2 gap-8 sm:mt-4 sm:grid-cols-3 sm:gap-6">
+            <div>
+              <Footer.LinkGroup col>
+                <Footer.Link href="#">Beranda</Footer.Link>
+                <Footer.Link href="#">Visi dan Misi</Footer.Link>
+                <Footer.Link href="#">Fasilitas</Footer.Link>
+              </Footer.LinkGroup>
+            </div>
+            <div>
+              <Footer.LinkGroup col>
+                <Footer.Link href="#">Galeri</Footer.Link>
+                <Footer.Link href="#">Berita</Footer.Link>
+                <Footer.Link href="#">Acara</Footer.Link>
+              </Footer.LinkGroup>
+            </div>
+            <div>
+              <Footer.LinkGroup col>
+                <Footer.Link href="#">Ekstrakurikuler (Ekskul)</Footer.Link>
+                <Footer.Link href="#">Jurusan</Footer.Link>
+                <Footer.Link href="#">Tentang Sekolah</Footer.Link>
+              </Footer.LinkGroup>
+            </div>
+          </div>
+        </div>
+        <Footer.Divider />
+        <div className="w-full sm:flex sm:items-center sm:justify-between">
+          <Footer.Copyright href="#" by="SMK Negeri 1 Lumban Julu" year={new Date().getFullYear()} />
+          <div className="mt-4 flex space-x-6 sm:mt-0 sm:justify-center">
+            <Footer.Icon href="#" icon={BsFacebook} />
+            <Footer.Icon href="#" icon={BsInstagram} />
+            <Footer.Icon href="#" icon={BsTwitter} />
+          </div>
+        </div>
       </div>
-    </footer>
+    </Footer>
   );
-};
+}
