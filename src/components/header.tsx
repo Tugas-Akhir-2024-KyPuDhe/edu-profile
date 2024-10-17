@@ -1,32 +1,37 @@
 import { Dropdown, Navbar } from "flowbite-react";
+import { useLocation } from "react-router-dom";
 
 const navigation = [
-  { name: "Beranda", href: "#", children: [] },
+  { name: "Beranda", href: "/", children: [] },
   {
     name: "Informasi",
-    href: "#",
+    href: "informasi",
     children: [
-      { name: "Visi dan Misi", href: "#" },
-      { name: "Fasilitas", href: "#" },
-      { name: "Galeri", href: "#" },
+      { name: "Visi dan Misi", href: "/informasi/visi-misi" },
+      { name: "Fasilitas", href: "/informasi/fasilitas" },
+      { name: "Galeri", href: "/informasi/galeri" },
     ],
   },
   {
     name: "Konten",
-    href: "#",
+    href: "/konten",
     children: [
-      { name: "Berita", href: "#" },
-      { name: "Acara", href: "#" },
+      { name: "Berita", href: "/konten/berita" },
+      { name: "Acara", href: "/konten/acara" },
     ],
   },
-  { name: "Ekstrakurikuler (Ekskul)", href: "#", children: [] },
-  { name: "Jurusan", href: "#", children: [] },
-  { name: "Tentang Sekolah", href: "#", children: [] },
+  { name: "Ekstrakurikuler (Ekskul)", href: "/ekstrakurikuler", children: [] },
+  { name: "Jurusan", href: "/jurusan", children: [] },
+  { name: "Tentang Sekolah", href: "/tentang-sekolah", children: [] },
 ];
 
 export const Header = () => {
+
+  
+  const location = useLocation();
+
   return (
-    <Navbar fluid rounded className="sticky top-0">
+    <Navbar fluid rounded className="sticky top-0 z-20 shadow">
       <Navbar.Brand href="#">
         <img
           src="https://flowbite.com/docs/images/logo.svg"
@@ -48,7 +53,7 @@ export const Header = () => {
                 inline
                 placement="bottom"
                 label={
-                  <span className="w-full text-start block py-2 pl-3 pr-4 md:p-0 border-b border-gray-100 text-gray-700 hover:bg-gray-50 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:border-0 md:hover:bg-transparent md:hover:text-cyan-700 md:dark:hover:bg-transparent md:dark:hover:text-white">
+                  <span className={"w-full text-start block py-2 pl-3 pr-4 md:p-0 border-b border-gray-100 hover:bg-gray-50 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:border-0 md:hover:bg-transparent md:hover:text-cyan-700 md:dark:hover:bg-transparent md:dark:hover:text-white" + (location.pathname.includes(item.href) ? ' text-cyan-700' : ' text-gray-700')}>
                     {item.name}
                   </span>
                 }
@@ -62,7 +67,7 @@ export const Header = () => {
             );
           } else {
             return (
-              <Navbar.Link key={item.name} href={item.href}>
+              <Navbar.Link key={item.name} href={item.href} active={location.pathname==item.href}>
                 {item.name}
               </Navbar.Link>
             );
