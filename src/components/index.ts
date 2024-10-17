@@ -1,4 +1,5 @@
+import { MyCard } from './card';
 import { Header } from "./header"
 import { MyFooter } from "./footer"
 
-export {Header, MyFooter}
+export {Header, MyFooter, MyCard}

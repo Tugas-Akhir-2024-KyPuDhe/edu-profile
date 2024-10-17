@@ -1,11 +1,15 @@
 import {Header, MyFooter} from "../../components";
-import {Body} from "../../features/homepage";
+import {Jurusan, MyBanner, MyCarousel, News, Statistics} from "../../features/homepage";
 
 export const HomePage = () => {
   return (
     <>
       <Header />
-      <Body />
+      <MyCarousel />
+      <Statistics />
+      <MyBanner />
+      <Jurusan />
+      <News />
       <MyFooter />
     </>
   );
