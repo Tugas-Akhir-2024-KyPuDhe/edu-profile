@@ -1,5 +1,5 @@
 import { Dropdown, Navbar } from "flowbite-react";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const navigation = [
   { name: "Beranda", href: "/", children: [] },
@@ -59,16 +59,18 @@ export const Header = () => {
                 }
               >
                 {item.children.map((child) => (
-                  <Dropdown.Item as={"a"} key={child.name} href={child.href}>
-                    {child.name}
-                  </Dropdown.Item>
+                  <Link to={child.href}>
+                    <Dropdown.Item as={"a"} key={child.name}>
+                      {child.name}
+                    </Dropdown.Item>
+                  </Link>
                 ))}
               </Dropdown>
             );
           } else {
             return (
-              <Navbar.Link key={item.name} href={item.href} active={location.pathname==item.href}>
-                {item.name}
+              <Navbar.Link key={item.name} active={location.pathname==item.href}>
+                <Link to={item.href}>{item.name}</Link>
               </Navbar.Link>
             );
           }
