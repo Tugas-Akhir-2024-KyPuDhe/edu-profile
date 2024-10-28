@@ -1,6 +1,6 @@
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
-import { HomePage, Berita, Acara, VisiMisi } from "./pages";
+import { HomePage, Berita, Acara, VisiMisi, Tentang } from "./pages";
 
 function App() {
   return (
@@ -14,7 +14,7 @@ function App() {
         <Route path="/konten/acara" element={<Acara />} />
         <Route path="/ekstrakurikuler" element={<HomePage />} />
         <Route path="/jurusan" element={<HomePage />} />
-        <Route path="/tentang-sekolah" element={<HomePage />} />
+        <Route path="/tentang-sekolah" element={<Tentang />} />
       </Routes>
     </>
   );
