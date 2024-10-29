@@ -1,6 +1,6 @@
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
-import { HomePage, Berita, Acara, VisiMisi, Tentang } from "./pages";
+import { HomePage, Berita, Acara, VisiMisi, Tentang, Jurusan, Ekskul, Fasilitas, Galeri } from "./pages";
 
 function App() {
   return (
@@ -8,12 +8,12 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/informasi/visi-misi" element={<VisiMisi />} />
-        <Route path="/informasi/fasilitas" element={<HomePage />} />
-        <Route path="/informasi/galeri" element={<HomePage />} />
+        <Route path="/informasi/fasilitas" element={<Fasilitas />} />
+        <Route path="/informasi/galeri" element={<Galeri />} />
         <Route path="/konten/berita" element={<Berita />} />
         <Route path="/konten/acara" element={<Acara />} />
-        <Route path="/ekstrakurikuler" element={<HomePage />} />
-        <Route path="/jurusan" element={<HomePage />} />
+        <Route path="/ekstrakurikuler" element={<Ekskul />} />
+        <Route path="/jurusan" element={<Jurusan />} />
         <Route path="/tentang-sekolah" element={<Tentang />} />
       </Routes>
     </>
