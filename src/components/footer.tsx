@@ -3,8 +3,8 @@ import { BsFacebook, BsInstagram, BsTwitter } from "react-icons/bs";
 
 export function MyFooter() {
   return (
-    <Footer container>
-      <div className="w-full bg-dark">
+    <Footer container className="border-t shadow-none">
+      <div className="w-full pt-10">
         <div className="grid w-full justify-between sm:flex sm:justify-between md:flex md:grid-cols-1">
           <div>
             <Footer.Brand

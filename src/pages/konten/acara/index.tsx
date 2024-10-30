@@ -6,8 +6,12 @@ export const Acara = () => {
     <>
       <Header />
       <MyBanner />
-      <News />
-      <MyPagination />
+
+      <div className="container py-10 gap-10 flex flex-col min-h-[40vh]">
+        <News />
+        <MyPagination />
+      </div>
+
       <MyFooter />
     </>
   );

@@ -6,8 +6,12 @@ export const VisiMisi = () => {
     <>
       <Header />
       <MyBanner />
-      <Visi />
-      <Misi />
+
+      <div className="container py-10 gap-10 flex flex-col min-h-[40vh]">
+        <Visi />
+        <Misi />
+      </div>
+
       <MyFooter />
     </>
   );
