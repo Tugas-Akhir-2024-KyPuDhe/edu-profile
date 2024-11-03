@@ -1,12 +1,13 @@
 import axios, { AxiosResponse } from "axios";
+import { GetAllArtikelResponse, GetSingleArtikelResponse } from "../interfaces";
 
 interface ArticleService {
-  all: () => Promise<unknown>;
-  single: (id: number) => Promise<unknown>;
+  all: () => Promise<GetAllArtikelResponse>;
+  single: (id: number) => Promise<GetSingleArtikelResponse>;
 }
 
 const ArticleService = (): ArticleService => {
-  const all = async (): Promise<unknown> => {
+  const all = async (): Promise<GetAllArtikelResponse> => {
     try {
       const response: AxiosResponse = await axios.get(
         `${import.meta.env.VITE_API_URL}/api/artikel/get`
@@ -19,7 +20,7 @@ const ArticleService = (): ArticleService => {
     }
   };
 
-  const single = async (id: number): Promise<unknown> => {
+  const single = async (id: number): Promise<GetSingleArtikelResponse> => {
     try {
       const response: AxiosResponse = await axios.get(
         `${import.meta.env.VITE_API_URL}/api/artikel/get/${id}`
