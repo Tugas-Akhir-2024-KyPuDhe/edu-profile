@@ -59,8 +59,8 @@ export const Header = () => {
                 }
               >
                 {item.children.map((child) => (
-                  <Link to={child.href}>
-                    <Dropdown.Item as={"a"} key={child.name}>
+                  <Link to={child.href} key={child.name}>
+                    <Dropdown.Item as={"a"}>
                       {child.name}
                     </Dropdown.Item>
                   </Link>
