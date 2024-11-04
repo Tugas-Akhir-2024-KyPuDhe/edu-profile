@@ -60,7 +60,7 @@ export const Header = () => {
               >
                 {item.children.map((child) => (
                   <Link to={child.href} key={child.name}>
-                    <Dropdown.Item as={"a"}>
+                    <Dropdown.Item>
                       {child.name}
                     </Dropdown.Item>
                   </Link>
@@ -69,9 +69,11 @@ export const Header = () => {
             );
           } else {
             return (
-              <Navbar.Link key={item.name} active={location.pathname==item.href}>
-                <Link to={item.href}>{item.name}</Link>
-              </Navbar.Link>
+              <Link to={item.href} key={item.name}>
+                <Navbar.Link as={"p"} active={location.pathname==item.href}>
+                  {item.name}
+                </Navbar.Link>
+              </Link>
             );
           }
         })}
