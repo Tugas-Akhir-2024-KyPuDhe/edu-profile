@@ -38,7 +38,7 @@ export const DetailAcara = () => {
               <span>{showFormattedDate(data.createdAt)}</span>
             </div>
             <h2 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-xl text-center">{data.title}</h2>
-            <p className="text-md text-gray-900 text-center">{data.description}</p>
+            <p className="text-md text-gray-900 text-center" dangerouslySetInnerHTML={{__html: data.description}}></p>
           </>
           ) : (
             <div className="m-auto">
