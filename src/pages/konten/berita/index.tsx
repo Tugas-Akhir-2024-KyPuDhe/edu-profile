@@ -1,5 +1,5 @@
 import {Header, MyFooter,MyBanner} from "../../../components";
-import {MyPagination, News } from "../../../features/konten/berita";
+import {News} from "../../../features/konten/berita";
 
 export const Berita = () => {
   return (
@@ -9,7 +9,6 @@ export const Berita = () => {
 
       <div className="container py-10 gap-10 flex flex-col min-h-[40vh]">
         <News />
-        <MyPagination />
       </div>
 
       <MyFooter />
