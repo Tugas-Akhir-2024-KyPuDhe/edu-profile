@@ -42,7 +42,7 @@ export const DetailBerita = () => {
           </>
           ) : (
             <div className="m-auto">
-              <Spinner className="text-center" size="lg"/>
+              <Spinner size="lg"/>
             </div>
           )
         }
