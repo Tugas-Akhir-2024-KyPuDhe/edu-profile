@@ -1,5 +1,5 @@
 import { Dropdown, Navbar } from "flowbite-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { School } from "../interfaces";
 
@@ -32,7 +32,13 @@ export const Header = () => {
   
   const location = useLocation();
 
-  const [schoolConfig] = useState<School>(JSON.parse(localStorage.getItem("school_config")!))
+  const [schoolConfig, setSchoolConfig] = useState<School>()
+
+  useEffect(()=> {
+    if(localStorage.getItem("school_config")) {
+      setSchoolConfig(JSON.parse(localStorage.getItem("school_config")!))
+    }
+  }, [])
 
   return (
     <Navbar fluid rounded className="sticky top-0 z-20 shadow">
@@ -43,7 +49,7 @@ export const Header = () => {
           alt="Logo"
         />
         <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
-          {schoolConfig.name}
+          {schoolConfig?.name}
         </span>
       </Navbar.Brand>
       <Navbar.Toggle />
