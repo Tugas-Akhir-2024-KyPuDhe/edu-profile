@@ -1,12 +1,13 @@
 import axios, { AxiosResponse } from "axios";
+import { GetAllFajusekResponse, GetSingleFajusekResponse } from "../interfaces/responses";
 
 interface EkstrakurikulerService {
-  all: () => Promise<AxiosResponse>;
-  single: (id: number) => Promise<AxiosResponse>;
+  all: () => Promise<GetAllFajusekResponse>;
+  single: (id: number) => Promise<GetSingleFajusekResponse>;
 }
 
 const EkstrakurikulerService = (): EkstrakurikulerService => {
-  const all = async (): Promise<AxiosResponse> => {
+  const all = async (): Promise<GetAllFajusekResponse> => {
     try {
       const response: AxiosResponse = await axios.get(
         `${import.meta.env.VITE_API_URL}/api/ekstrakurikuler/get`
@@ -19,7 +20,7 @@ const EkstrakurikulerService = (): EkstrakurikulerService => {
     }
   };
 
-  const single = async (id: number): Promise<AxiosResponse> => {
+  const single = async (id: number): Promise<GetSingleFajusekResponse> => {
     try {
       const response: AxiosResponse = await axios.get(
         `${import.meta.env.VITE_API_URL}/api/ekstrakurikuler/get/${id}`
