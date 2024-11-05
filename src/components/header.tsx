@@ -36,7 +36,7 @@ export const Header = () => {
 
   return (
     <Navbar fluid rounded className="sticky top-0 z-20 shadow">
-      <Navbar.Brand href="#">
+      <Navbar.Brand href="/">
         <img
           src="https://flowbite.com/docs/images/logo.svg"
           className="mr-3 h-6 sm:h-9"
