@@ -1,5 +1,7 @@
 import { Dropdown, Navbar } from "flowbite-react";
+import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { School } from "../interfaces";
 
 const navigation = [
   { name: "Beranda", href: "/", children: [] },
@@ -30,6 +32,8 @@ export const Header = () => {
   
   const location = useLocation();
 
+  const [schoolConfig] = useState<School>(JSON.parse(localStorage.getItem("school_config")!))
+
   return (
     <Navbar fluid rounded className="sticky top-0 z-20 shadow">
       <Navbar.Brand href="#">
@@ -39,7 +43,7 @@ export const Header = () => {
           alt="Logo"
         />
         <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
-          SMK Negeri 1 Lumban Julu
+          {schoolConfig.name}
         </span>
       </Navbar.Brand>
       <Navbar.Toggle />

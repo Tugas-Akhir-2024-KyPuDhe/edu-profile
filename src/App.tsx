@@ -2,8 +2,28 @@ import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import { HomePage, Berita, Acara, VisiMisi, Tentang, Jurusan, Ekskul, Fasilitas, Galeri, DetailBerita } from "./pages";
 import { DetailAcara } from "./pages/konten/acara/[id]";
+import { useEffect } from "react";
+import SchoolService from "./services/school";
 
 function App() {
+
+  useEffect(()=>{
+
+    loadData()
+
+    async function loadData() {
+      try {
+        const response = await SchoolService().get()
+        
+        localStorage.setItem("school_config", JSON.stringify(response.data))
+
+      } catch (error) {
+        console.error(error)
+      }
+    }
+
+  }, [])
+
   return (
     <>
       <Routes>

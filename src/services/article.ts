@@ -1,5 +1,5 @@
 import axios, { AxiosResponse } from "axios";
-import { GetAllArtikelResponse, GetSingleArtikelResponse } from "../interfaces";
+import { GetAllArtikelResponse, GetSingleArtikelResponse } from "../interfaces/responses";
 
 interface ArticleService {
   all: ({page, per_page}: {page?: number; per_page?: number }) => Promise<GetAllArtikelResponse>;

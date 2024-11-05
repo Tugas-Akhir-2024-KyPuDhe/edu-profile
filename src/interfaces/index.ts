@@ -1,5 +1,6 @@
-import { GetAllArtikelResponse, GetSingleArtikelResponse } from './responses/article';
+import { School } from './school';
+import { Fajusek } from './fajusek';
 import { Article } from './article' 
 import { Media } from './media'
 
-export type {Article, Media, GetAllArtikelResponse, GetSingleArtikelResponse}
+export type {Article, Fajusek, Media, School}
