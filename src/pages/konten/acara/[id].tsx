@@ -34,7 +34,7 @@ export const DetailAcara = () => {
         {data ? (
           <>
             <div className="flex gap-3 mx-auto items-center">
-              <Badge>{data.type}</Badge>
+              <Badge className="capitalize">{data.type}</Badge>
               <span>{showFormattedDate(data.createdAt)}</span>
             </div>
             <h2 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-xl text-center">{data.title}</h2>
