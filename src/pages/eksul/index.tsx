@@ -29,7 +29,7 @@ export const Ekskul = () => {
         <Header />
         <MyBanner title="Ekstrakurikuler" currentPage="Ekstrakurikuler" beforePages={[{title: "Beranda", href: "/"}]} />
 
-        <div className="container py-10 gap-10 flex flex-col min-h-[40vh]">
+        <div className="container py-10 gap-10 flex flex-col ">
           {isLoading ? (
             <div className="m-auto">
               <Spinner size="lg"/>

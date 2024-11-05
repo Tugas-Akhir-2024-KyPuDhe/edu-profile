@@ -11,7 +11,7 @@ export const Tentang = () => {
       <Header />
       <MyBanner title="Tentang Sekolah" currentPage="Tentang Sekolah" beforePages={[{title: "Beranda", href: "/"}]} />
 
-      <div className="container py-10 gap-10 flex flex-col min-h-[40vh]">
+      <div className="container py-10 gap-10 flex flex-col ">
         <p className="text-pretty text-xl font-semibold text-gray-900 text-justify my-auto">{schoolConfig.about}</p>
       </div>
         

@@ -30,7 +30,7 @@ export const DetailAcara = () => {
       <Header />
       <MyBanner title={"Detail Acara"} currentPage="Detail Acara" beforePages={[{title: "Beranda", href: "/"}, {title: "Acara", href: "/konten/acara"}, ]} />
       
-      <div className="container py-10 gap-5 flex flex-col min-h-[40vh]">
+      <div className="container py-10 gap-5 flex flex-col ">
         {data ? (
           <>
             <div className="flex gap-3 mx-auto items-center">

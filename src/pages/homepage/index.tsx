@@ -11,7 +11,7 @@ export const HomePage = () => {
       <MyBanner />
       <Jurusan />
 
-      <div className="container py-10 gap-10 flex flex-col min-h-[40vh]">
+      <div className="container py-10 gap-10 flex flex-col ">
         <h2 className="text-3xl font-bold text-gray-900 text-center">Berita Terbaru</h2>
         <News />
       </div>
