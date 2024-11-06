@@ -1,4 +1,5 @@
 import { Breadcrumb } from "flowbite-react";
+import { Link } from "react-router-dom";
 
 export const MyBanner = (prop: {title:string, currentPage: string, beforePages: {title: string, href: string}[]}) => {
     return (
@@ -11,13 +12,15 @@ export const MyBanner = (prop: {title:string, currentPage: string, beforePages: 
 
                 <Breadcrumb className="flex justify-center mt-5 text-gray-900">
                   {prop.beforePages.map((page)=>(
-                    <Breadcrumb.Item key={page.title} href={page.href} theme={{
-                        href : {
-                            on: "text-lg text-gray-600 hover:text-gray-800 font-medium"
-                        }
-                    }}>
-                        {page.title}
-                    </Breadcrumb.Item>
+                    <Breadcrumb.Item key={page.title} theme={{
+                      href : {
+                        on: "text-lg text-gray-600 hover:text-gray-800 font-medium"
+                          }
+                      }}>
+                        <Link to={page.href}>
+                          {page.title}
+                        </Link>
+                      </Breadcrumb.Item>
                   ))}
                     
                     <Breadcrumb.Item theme={{
