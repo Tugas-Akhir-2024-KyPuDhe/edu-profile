@@ -41,14 +41,14 @@ export const Header = () => {
   }, [])
 
   return (
-    <Navbar fluid rounded className="sticky top-0 z-20 shadow">
+    <Navbar fluid rounded className="sticky top-0 z-20 shadow" theme={{root:{rounded:{on:""}}}}>
       <Navbar.Brand href="/">
         <img
           src="https://flowbite.com/docs/images/logo.svg"
           className="mr-3 h-6 sm:h-9"
           alt="Logo"
         />
-        <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
+        <span className="self-center whitespace-nowrap text-lg sm:text-xl font-semibold dark:text-white">
           {schoolConfig?.name}
         </span>
       </Navbar.Brand>

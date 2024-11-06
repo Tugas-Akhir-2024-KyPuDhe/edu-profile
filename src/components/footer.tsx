@@ -15,7 +15,7 @@ export function MyFooter() {
   }, [])
   
   return (
-    <Footer container className="border-t shadow-none">
+    <Footer container theme={{root:{base:"w-full border-t bg-white dark:bg-gray-800 md:flex md:items-center md:justify-between"}}}>
       <div className="w-full">
         <div className="grid w-full justify-between sm:flex sm:justify-between md:flex md:grid-cols-1 gap-3">
           <div className="flex flex-col gap-2">
@@ -24,6 +24,7 @@ export function MyFooter() {
               src="https://flowbite.com/docs/images/logo.svg"
               alt="Logo"
               name={schoolConfig?.name}
+              theme={{span: "self-center whitespace-nowrap text-lg sm:text-xl font-semibold text-gray-800 dark:text-white"}}
             />
             <h4>{schoolConfig?.address}</h4>
             <a href={"tel:"+schoolConfig?.telp} className="flex gap-2 items-center text-sm text-gray-500 hover:underline"> <PhoneIcon width={24} />  {schoolConfig?.telp}</a>
