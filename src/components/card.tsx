@@ -1,7 +1,7 @@
-import { ChevronRightIcon } from "@heroicons/react/16/solid";
 import { Button, Card, Badge } from "flowbite-react";
 import { Link } from "react-router-dom";
 import { showFormattedDate } from "../utils";
+import { BiChevronRight } from "react-icons/bi";
 
 export const MyCard = (prop: {title: string , description: string , href: string, image: string, badge: string, date: string}) => (
   <Card
@@ -23,7 +23,7 @@ export const MyCard = (prop: {title: string , description: string , href: string
       <Link to={prop.href}>
         <Button>
           Read more
-          <ChevronRightIcon className="ml-2 h-5 w-5" />
+          <BiChevronRight className="ml-2 h-5 w-5" />
         </Button>
       </Link>
     </div>

@@ -8,7 +8,7 @@ export const Galeri = () => {
 
       <div className="container py-10 gap-10 flex flex-col ">
 
-        <div className="flex items-center justify-center py-4 md:py-8 flex-wrap">
+        <div className="flex items-center justify-center flex-wrap">
           <button type="button" className="text-green-500 hover:text-white border border-green-300 bg-white hover:bg-green-500 focus:ring-4 focus:outline-none focus:ring-green-300 rounded-full text-base font-medium px-5 py-2.5 text-center me-3 mb-3">All categories</button>
           <button type="button" className="text-gray-900 border border-white hover:border-gray-200 bg-white focus:ring-4 focus:outline-none focus:ring-gray-300 rounded-full text-base font-medium px-5 py-2.5 text-center me-3 mb-3">Berita</button>
           <button type="button" className="text-gray-900 border border-white hover:border-gray-200 bg-white focus:ring-4 focus:outline-none focus:ring-gray-300 rounded-full text-base font-medium px-5 py-2.5 text-center me-3 mb-3">Acara</button>

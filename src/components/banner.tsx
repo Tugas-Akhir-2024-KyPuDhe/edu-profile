@@ -17,7 +17,7 @@ export const MyBanner = (prop: {title:string, currentPage: string, beforePages: 
                         on: "text-lg text-gray-600 hover:text-gray-800 font-medium"
                           }
                       }}>
-                        <Link to={page.href}>
+                        <Link className="text-lg text-gray-600 hover:text-gray-800 font-medium" to={page.href}>
                           {page.title}
                         </Link>
                       </Breadcrumb.Item>
