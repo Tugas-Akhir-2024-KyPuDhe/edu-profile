@@ -11,3 +11,11 @@ export interface School {
     ig: string,
     tiktok: string,
 }
+
+export interface Statistic {
+    student: number,
+    teacher: number,
+    staff: number,
+    major: number,
+    alumni: number
+}
