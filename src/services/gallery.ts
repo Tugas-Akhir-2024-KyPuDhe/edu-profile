@@ -9,7 +9,7 @@ const GalleryService = (): GalleryService => {
   const get = async (): Promise<GetGalleryResponse> => {
     try {
       const response: AxiosResponse = await axios.get(
-        `${import.meta.env.VITE_API_URL}/api/gallery/get`
+        `${import.meta.env.VITE_API_URL}/api/galeri/get`
       );
       
       return response.data;
