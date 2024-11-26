@@ -3,5 +3,6 @@ import { School, Statistic } from './school';
 import { Fajusek } from './fajusek';
 import { Article } from './article' 
 import { Media } from './media'
+import { Gallery } from './gallery'
 
-export type {Article, Fajusek, Media, School, Statistic, Banner}
+export type {Article, Fajusek, Media, School, Statistic, Banner, Gallery}
