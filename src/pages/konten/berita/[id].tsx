@@ -5,6 +5,7 @@ import { ArticleService } from "../../../services";
 import { Article } from "../../../interfaces";
 import { Badge, Spinner } from "flowbite-react";
 import { showFormattedDate } from "../../../utils";
+import parse from 'html-react-parser'
 
 export const DetailBerita = () => {
 
@@ -16,7 +17,7 @@ export const DetailBerita = () => {
 
       async function created() {
         try {
-          const response = await ArticleService().single(parseInt(id!))
+          const response = await ArticleService().single(id!)
           setData(response.data)
         } catch (error) {
           console.error(error)      
@@ -38,7 +39,7 @@ export const DetailBerita = () => {
               <span>{showFormattedDate(data.createdAt)}</span>
             </div>
             <h2 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-xl text-center">{data.title}</h2>
-            <p className="text-md text-gray-900 text-center" dangerouslySetInnerHTML={{__html: data.description}}></p>
+            <p className="text-md text-gray-900 html-content">{parse(data.description)}</p>
           </>
           ) : (
             <div className="m-auto">

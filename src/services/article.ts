@@ -3,7 +3,7 @@ import { GetAllArtikelResponse, GetSingleArtikelResponse } from "../interfaces/r
 
 interface ArticleService {
   all: ({page, per_page}: {page?: number; per_page?: number }) => Promise<GetAllArtikelResponse>;
-  single: (id: number) => Promise<GetSingleArtikelResponse>;
+  single: (id: string) => Promise<GetSingleArtikelResponse>;
 }
 
 const ArticleService = (): ArticleService => {
@@ -20,7 +20,7 @@ const ArticleService = (): ArticleService => {
     }
   };
 
-  const single = async (id: number): Promise<GetSingleArtikelResponse> => {
+  const single = async (id: string): Promise<GetSingleArtikelResponse> => {
     try {
       const response: AxiosResponse = await axios.get(
         `${import.meta.env.VITE_API_URL}/api/artikel/get/${id}`
