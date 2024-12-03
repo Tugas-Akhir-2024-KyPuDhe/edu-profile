@@ -1,7 +1,8 @@
 export interface School {
     name: string,
     about: string,
-    visionMision: null,
+    vision: string,
+    mission: string,
     address: string,
     mediaId: null,
     telp: string,
@@ -10,6 +11,7 @@ export interface School {
     fb: string,
     ig: string,
     tiktok: string,
+    maps: string,
 }
 
 export interface Statistic {
