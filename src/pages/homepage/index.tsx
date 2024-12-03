@@ -29,10 +29,8 @@ export const HomePage = () => {
       <div ref={ref1} className={`container gap-10 flex flex-col py-20 transition ease-in duration-700 ${isVisible1 ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
 
         <h2 className="text-3xl font-bold text-center uppercase text-gray-900">Sejarah Singkat</h2>
-        <p className="text-lg leading-8 text-gray-900 text-center">
-            {schoolConfig?.about}
-        </p>
-
+        <p className="text-lg leading-8 text-gray-900 text-center" dangerouslySetInnerHTML={{__html: schoolConfig?.about || ''}}></p>
+        
       </div>
 
       <Statistics />
