@@ -31,7 +31,7 @@ export function MyFooter() {
             <a href={schoolConfig?.fb} className="flex gap-2 items-center text-sm text-gray-500 hover:underline"> <FaFacebook size={20} />  {schoolConfig?.name}</a>
             <a href={schoolConfig?.ig} className="flex gap-2 items-center text-sm text-gray-500 hover:underline"> <FaInstagram size={20} />{schoolConfig?.name}</a>
           </div>
-          <div dangerouslySetInnerHTML={{__html: schoolConfig?.maps || ''}}></div>
+          <div className="w-full sm:w-1/2 md:w-1/3 h-80" dangerouslySetInnerHTML={{__html: schoolConfig?.maps.replace(`height="450"`, `height="100%"`).replace(`width="600"`, `width="100%"`) || ''}}></div>
         </div>
         <Footer.Divider />
         <h6 className="font-medium text-gray-500 text-center">Made with ❤️ by {schoolConfig?.name}</h6>
