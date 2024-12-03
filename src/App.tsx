@@ -2,10 +2,15 @@ import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import { HomePage, Berita, Acara, VisiMisi, Tentang, Jurusan, Ekskul, Fasilitas, Galeri, DetailBerita } from "./pages";
 import { DetailAcara } from "./pages/konten/acara/[id]";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import SchoolService from "./services/school";
+import Favicon from "react-favicon";
+import { School } from "./interfaces";
 
 function App() {
+
+  const [schoolConfig, setSchoolConfig] = useState<School>()
+
 
   useEffect(()=>{
 
@@ -14,6 +19,8 @@ function App() {
     async function loadData() {
       try {
         const response = await SchoolService().get()
+
+        setSchoolConfig(response.data)
         
         localStorage.setItem("school_config", JSON.stringify(response.data))
 
@@ -26,6 +33,7 @@ function App() {
 
   return (
     <>
+      <Favicon url={schoolConfig?.logo.url || ''} />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/informasi/visi-misi" element={<VisiMisi />} />

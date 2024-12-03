@@ -20,7 +20,7 @@ export function MyFooter() {
           <div className="flex flex-col gap-2">
             <Footer.Brand
               href="/"
-              src="https://flowbite.com/docs/images/logo.svg"
+              src={schoolConfig?.logo.url || ''}
               alt="Logo"
               name={schoolConfig?.name}
               theme={{span: "self-center whitespace-nowrap text-lg sm:text-xl font-semibold text-gray-800 dark:text-white"}}

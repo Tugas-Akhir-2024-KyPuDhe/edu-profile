@@ -1,3 +1,5 @@
+import { Media } from "./media"
+
 export interface School {
     name: string,
     about: string,
@@ -12,6 +14,7 @@ export interface School {
     ig: string,
     tiktok: string,
     maps: string,
+    logo: Media
 }
 
 export interface Statistic {

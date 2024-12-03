@@ -44,7 +44,7 @@ export const Header = () => {
     <Navbar fluid rounded className="sticky top-0 z-20 shadow" theme={{root:{rounded:{on:""}}}}>
       <Navbar.Brand href="/">
         <img
-          src="https://flowbite.com/docs/images/logo.svg"
+          src={schoolConfig?.logo.url}
           className="mr-3 h-6 sm:h-9"
           alt="Logo"
         />
