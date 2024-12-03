@@ -22,7 +22,7 @@ export const MyCard = (prop: {title: string , description: string , href: string
 
       <Link to={prop.href}>
         <Button>
-          Read more
+          Selengkapnya
           <BiChevronRight className="ml-2 h-5 w-5" />
         </Button>
       </Link>

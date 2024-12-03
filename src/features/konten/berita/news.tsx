@@ -48,7 +48,7 @@ export const News = () => {
       </div>
       
       <div className="flex overflow-x-auto sm:justify-center">
-        <Pagination currentPage={parseInt(searchParams.get('page')!)} totalPages={totalPages} onPageChange={onPageChange} showIcons />
+        <Pagination currentPage={parseInt(searchParams.get('page')!)} totalPages={totalPages} onPageChange={onPageChange} showIcons previousLabel="Sebelumnya" nextLabel="Selanjutnya"/>
       </div>
     </>
   )
