@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import {Header, MyFooter} from "../../components";
-import {Jurusan, MyCarousel, Statistics} from "../../features/homepage";
+import {MyCarousel, Statistics} from "../../features/homepage";
 import { News } from "../../features/konten/berita";
 import { School } from "../../interfaces";
 import { useIsVisible } from "../../utils";
@@ -36,7 +36,6 @@ export const HomePage = () => {
       </div>
 
       <Statistics />
-      <Jurusan />
 
       <div ref={ref2} className={`container gap-10 flex flex-col py-20 transition ease-in duration-700 ${isVisible2 ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
         <h2 className="text-3xl font-bold text-center uppercase text-gray-900">Berita Terbaru</h2>
