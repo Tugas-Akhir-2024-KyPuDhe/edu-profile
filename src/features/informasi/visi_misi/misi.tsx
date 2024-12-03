@@ -13,7 +13,7 @@ export const Misi = () => {
     return (
       <div className="flex flex-col gap-10 items-start">
         <h1 className="text-pretty text-lg md:text-xl lg:text-4xl font-semibold text-gray-900 p-5 bg-red-300">MISI</h1>
-        <div className="text-pretty text-md md:text-xl font-semibold text-gray-900 text-justify" dangerouslySetInnerHTML={{__html:schoolConfig?.mission.replaceAll('\n', '<br/>') || ''}}>
+        <div className="text-pretty text-md md:text-xl font-semibold text-gray-900 text-justify" dangerouslySetInnerHTML={{__html:schoolConfig?.mission.replace(/\n/g, "<br />") || ''}}>
         </div>
       </div>
     );
