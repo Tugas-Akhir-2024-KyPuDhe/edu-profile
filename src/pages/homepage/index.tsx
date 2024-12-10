@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import {MyCarousel, Statistics} from "../../features/homepage";
-import { News } from "../../features/konten/berita";
+import { News } from "../../features/homepage";
 import { School } from "../../interfaces";
 import { useIsVisible } from "../../utils";
 
