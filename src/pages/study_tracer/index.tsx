@@ -12,7 +12,7 @@ export const StudyTracer = () => {
     <>
       <MyBanner title="Study Tracer" currentPage="Study Tracer" beforePages={[{title: "Beranda", href: "/"}]} />
 
-      <form className="container py-10 flex max-w-xl flex-col gap-4">
+      <form className="container py-10 flex max-w-xl flex-col gap-4" method="post">
         <div>
           <div className="mb-2 block">
             <Label htmlFor="nama" value="Nama" />
@@ -128,7 +128,7 @@ export const StudyTracer = () => {
           </div>
           <TextInput id="permasalahan" type="text" placeholder="Masukkan permasalahan..."  />
         </div>
-        <Button type="submit">Submit</Button>
+        <Button type="button">Submit</Button>
       </form>
     </>
   );
