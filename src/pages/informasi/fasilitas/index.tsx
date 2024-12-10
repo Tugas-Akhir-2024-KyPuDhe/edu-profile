@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import {Header, MyFooter, MyBanner} from "../../../components";
+import {MyBanner} from "../../../components";
 import { FasilitasService } from "../../../services";
 import { Fajusek } from "../../../interfaces";
 import { Spinner } from "flowbite-react";
@@ -26,7 +26,6 @@ export const Fasilitas = () => {
 
   return (
     <>
-      <Header />
       <MyBanner title="Fasilitas" currentPage="Fasilitas" beforePages={[{title: "Beranda", href: "/"}]} />
 
       <div className="container py-10 gap-10 flex flex-col ">
@@ -44,8 +43,6 @@ export const Fasilitas = () => {
           ))
         )}
       </div>
-
-      <MyFooter />
     </>
   );
 };

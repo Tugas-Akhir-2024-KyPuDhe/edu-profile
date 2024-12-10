@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import {Header, MyFooter, MyBanner} from "../../../components";
+import {MyBanner} from "../../../components";
 import { Gallery, Media } from "../../../interfaces";
 import GalleryService from "../../../services/gallery";
 import { Spinner } from "flowbite-react";
@@ -36,7 +36,6 @@ export const Galeri = () => {
 
   return (
     <>
-      <Header />
       <MyBanner title="Galeri" currentPage="Galeri" beforePages={[{title: "Beranda", href: "/"}]} />
 
       <div className="container py-10 gap-10 flex flex-col">
@@ -63,8 +62,6 @@ export const Galeri = () => {
             )}
 
       </div>
-
-      <MyFooter />
     </>
   );
 };

@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import SchoolService from "./services/school";
 import Favicon from "react-favicon";
 import { School } from "./interfaces";
+import { Header, MyFooter } from "./components";
 
 function App() {
 
@@ -34,6 +35,7 @@ function App() {
   return (
     <>
       <Favicon url={schoolConfig?.logo.url || ''} />
+      <Header />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/informasi/visi-misi" element={<VisiMisi />} />
@@ -47,6 +49,7 @@ function App() {
         <Route path="/jurusan/:id" element={<Jurusan />} />
         <Route path="/tentang-sekolah" element={<Tentang />} />
       </Routes>
+      <MyFooter />
     </>
   );
 }

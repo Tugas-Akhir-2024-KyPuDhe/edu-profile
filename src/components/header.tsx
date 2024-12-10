@@ -56,8 +56,6 @@ export const Header = () => {
         console.error(error)      
       }
     }
-
-    console.log(navigation)
   }, [])
 
   return (

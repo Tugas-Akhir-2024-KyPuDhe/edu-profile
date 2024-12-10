@@ -1,5 +1,4 @@
 import { useRef, useState } from "react";
-import {Header, MyFooter} from "../../components";
 import {MyCarousel, Statistics} from "../../features/homepage";
 import { News } from "../../features/konten/berita";
 import { School } from "../../interfaces";
@@ -19,7 +18,6 @@ export const HomePage = () => {
 
   return (
     <>
-      <Header />
       <MyCarousel />
       
       <div ref={ref1} className={`container gap-10 flex flex-col py-20 transition ease-in duration-700 ${isVisible1 ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
@@ -35,8 +33,6 @@ export const HomePage = () => {
         <h2 className="text-3xl font-bold text-center uppercase text-gray-900">Berita Terbaru</h2>
         <News />
       </div>
-      
-      <MyFooter />
     </>
   );
 };

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import {Header, MyFooter, MyBanner} from "../../components";
+import {MyBanner} from "../../components";
 import { Fajusek } from "../../interfaces";
 import { EkstrakurikulerService } from "../../services";
 import { Spinner } from "flowbite-react";
@@ -26,7 +26,6 @@ export const Ekskul = () => {
 
   return (
     <>
-        <Header />
         <MyBanner title="Ekstrakurikuler" currentPage="Ekstrakurikuler" beforePages={[{title: "Beranda", href: "/"}]} />
 
         <div className="container py-10 gap-10 flex flex-col ">
@@ -44,8 +43,6 @@ export const Ekskul = () => {
             ))
           )}
         </div>
-
-        <MyFooter />
     </>
   );
 };

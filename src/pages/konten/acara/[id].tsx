@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import {Header, MyBanner, MyFooter} from "../../../components";
+import {MyBanner} from "../../../components";
 import { useEffect, useState } from "react";
 import { ArticleService } from "../../../services";
 import { Article } from "../../../interfaces";
@@ -28,7 +28,6 @@ export const DetailAcara = () => {
 
   return (
     <>
-      <Header />
       <MyBanner title={"Detail Acara"} currentPage="Detail Acara" beforePages={[{title: "Beranda", href: "/"}, {title: "Acara", href: "/konten/acara"}, ]} />
       
       <div className="container py-10 gap-5 flex flex-col ">
@@ -48,8 +47,6 @@ export const DetailAcara = () => {
           )
         }
       </div> 
-
-      <MyFooter />
     </>
   );
 };
