@@ -36,10 +36,12 @@ export const Header = () => {
   const location = useLocation();
 
   const [schoolConfig] = useState<School>(JSON.parse(localStorage.getItem("school_config")!))
+  const [loading, setLoading] = useState<boolean>(false)
 
   useEffect(()=>{
     getJurusan()
     async function getJurusan() {
+      setLoading(true)
       try {
         const response = await JurusanService().all()
         navigation.map(function(nav){
@@ -55,10 +57,11 @@ export const Header = () => {
       } catch (error) {
         console.error(error)      
       }
+      setLoading(false)
     }
   }, [])
 
-  return (
+  return loading ? <></> :  (
     <Navbar fluid rounded className="sticky top-0 z-20 shadow" theme={{root:{rounded:{on:""}}}}>
       <Navbar.Brand href="/">
         <img
