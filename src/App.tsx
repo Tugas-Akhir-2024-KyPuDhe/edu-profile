@@ -44,7 +44,7 @@ function App() {
         <Route path="/konten/acara" element={<Acara />} />
         <Route path="/konten/acara/:id" element={<DetailAcara />} />
         <Route path="/ekstrakurikuler" element={<Ekskul />} />
-        <Route path="/jurusan" element={<Jurusan />} />
+        <Route path="/jurusan/:id" element={<Jurusan />} />
         <Route path="/tentang-sekolah" element={<Tentang />} />
       </Routes>
     </>

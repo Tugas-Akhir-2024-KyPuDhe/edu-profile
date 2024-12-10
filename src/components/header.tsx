@@ -1,7 +1,8 @@
 import { Dropdown, Navbar } from "flowbite-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { School } from "../interfaces";
+import { JurusanService } from "../services";
 
 const navigation = [
   { name: "Beranda", href: "/", children: [] },
@@ -23,16 +24,39 @@ const navigation = [
     ],
   },
   { name: "Ekstrakurikuler (Ekskul)", href: "/ekstrakurikuler", children: [] },
-  { name: "Jurusan", href: "/jurusan", children: [] },
+  {
+    name: "Jurusan",
+    href: "/jurusan",
+    children: [],
+  },
   { name: "Tentang Sekolah", href: "/tentang-sekolah", children: [] },
 ];
 
 export const Header = () => {
-
-  
   const location = useLocation();
 
   const [schoolConfig] = useState<School>(JSON.parse(localStorage.getItem("school_config")!))
+
+  useEffect(()=>{
+    getJurusan()
+    async function getJurusan() {
+      try {
+        const response = await JurusanService().all()
+        navigation.map(function(nav){
+          if(nav.name == "Jurusan") {
+            response.data.map(jurs=>{
+              nav.children.push({ name: jurs.name, href: "/jurusan/"+jurs.id })
+            })
+          }
+          return nav
+        })
+      } catch (error) {
+        console.error(error)      
+      }
+    }
+
+    console.log(navigation)
+  }, [])
 
   return (
     <Navbar fluid rounded className="sticky top-0 z-20 shadow" theme={{root:{rounded:{on:""}}}}>
