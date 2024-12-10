@@ -24,7 +24,7 @@ export const Jurusan = () => {
       }
       setIsLoading(false)
     }
-  }, [id])
+  }, [id])``
 
   return (
     <>

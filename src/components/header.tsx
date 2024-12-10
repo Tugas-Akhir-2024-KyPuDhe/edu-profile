@@ -44,9 +44,11 @@ export const Header = () => {
         const response = await JurusanService().all()
         navigation.map(function(nav){
           if(nav.name == "Jurusan") {
+            const children: { name: string; href: string; }[] = []
             response.data.map(jurs=>{
-              nav.children.push({ name: jurs.name, href: "/jurusan/"+jurs.id })
+              children.push({ name: jurs.name, href: "/jurusan/"+jurs.id })
             })
+            nav.children = children
           }
           return nav
         })
