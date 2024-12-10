@@ -29,6 +29,7 @@ const navigation = [
     href: "/jurusan",
     children: [],
   },
+  { name: "Study Tracer", href: "/study-tracer", children: [] },
   { name: "Tentang Sekolah", href: "/tentang-sekolah", children: [] },
 ];
 

@@ -1,6 +1,6 @@
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
-import { HomePage, Berita, Acara, VisiMisi, Tentang, Jurusan, Ekskul, Fasilitas, Galeri, DetailBerita } from "./pages";
+import { HomePage, Berita, Acara, VisiMisi, Tentang, Jurusan, Ekskul, Fasilitas, Galeri, DetailBerita, StudyTracer } from "./pages";
 import { DetailAcara } from "./pages/konten/acara/[id]";
 import { useEffect, useState } from "react";
 import SchoolService from "./services/school";
@@ -48,6 +48,7 @@ function App() {
         <Route path="/ekstrakurikuler" element={<Ekskul />} />
         <Route path="/jurusan/:id" element={<Jurusan />} />
         <Route path="/tentang-sekolah" element={<Tentang />} />
+        <Route path="/study-tracer" element={<StudyTracer />} />
       </Routes>
       <MyFooter />
     </>
