@@ -3,6 +3,7 @@ import {MyBanner} from "../../../components";
 import { Gallery, Media } from "../../../interfaces";
 import GalleryService from "../../../services/gallery";
 import { Spinner } from "flowbite-react";
+import  LightGallery  from "lightgallery/react";
 
 export const Galeri = () => {
 
@@ -51,13 +52,11 @@ export const Galeri = () => {
                         ))}
                     </div>
                 
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <LightGallery elementClassNames="grid grid-cols-2 md:grid-cols-4 gap-4">
                         {medias.map(media=>(
-                            <div>
-                                <img className="h-auto max-w-full rounded-lg" src={media.url} alt={media.type}/>
-                            </div>
+                            <img className="h-auto max-w-full rounded-lg hover:cursor-pointer" src={media.url} alt={media.type}/>
                         ))}
-                    </div>
+                    </LightGallery>
                 </>
             )}
 
