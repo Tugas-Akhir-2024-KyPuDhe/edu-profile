@@ -38,6 +38,7 @@ export const DetailAcara = () => {
               <span>{showFormattedDate(data.createdAt)}</span>
             </div>
             <h2 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-xl text-center">{data.title}</h2>
+            <img src={data.banner?.url} className="w-full" alt={data.title} />
             <p className="text-md text-gray-900 html-content">{parse(data.description)}</p>
           </>
           ) : (

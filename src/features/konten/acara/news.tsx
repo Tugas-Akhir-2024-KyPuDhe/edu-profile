@@ -44,7 +44,7 @@ export const News = () => {
   ) : (
     <>
       <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-        {data.map(article=><MyCard key={article.id} image={"https://flowbite-react.com/images/blog/image-1.jpg"} title={article.title} description={article.description} href={'/konten/acara/'+article.uuid} badge={article.type} date={article.createdAt}/>)}
+        {data.map(article=><MyCard key={article.id} image={article.banner?.url || "https://flowbite-react.com/images/blog/image-1.jpg"} title={article.title} description={article.description} href={'/konten/berita/'+article.uuid} badge={article.category||''} date={article.createdAt}/>)}
       </div>
       
       <div className="flex overflow-x-auto sm:justify-center">

@@ -9,9 +9,10 @@ export interface Article {
   date: Date;
   status: string;
   type: string;
+  category: string;
   createdAt: string;
   updatedAt: string;
   media: Media[];
-  banner: string | null;
+  banner: Media | null;
 }
   

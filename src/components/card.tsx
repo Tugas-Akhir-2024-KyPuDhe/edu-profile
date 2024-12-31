@@ -7,13 +7,12 @@ import parse from 'html-react-parser'
 
 export const MyCard = (prop: {title: string , description: string , href: string, image: string, badge: string, date: string}) => (
   <Card
-    imgAlt="Meaningful alt text for an image that is not purely decorative"
-    imgSrc={prop.image}
     theme={{root:{children:"flex h-full flex-col justify-start gap-4 p-6"}}}
+    renderImage={() => <img className="h-52 object-cover" src={prop.image} />}
   >
     <div className="flex flex-col gap-2 justify-start items-start">
       <div>
-        <Badge className="w-fit capitalize">{prop.badge}</Badge>
+        {prop.badge ? <Badge className="w-fit capitalize">{prop.badge}</Badge> : ''}
         <span className="text-xs font-semibold">{showFormattedDate(prop.date)}</span>
       </div>
 
