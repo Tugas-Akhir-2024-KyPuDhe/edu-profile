@@ -16,20 +16,21 @@ export const News = () => {
   useEffect(()=>{
     if(!searchParams.get('page')) {
       setSearchParams({page:'1'})
-    }
+    } else {
+      
+      loadData()
 
-    loadData()
-
-    async function loadData() {
-      setIsLoading(true)
-      try {
-        const response = await ArticleService().all({page:parseInt(searchParams.get('page')!), type: 'Acara Umum'})
-        setData(response.data)
-        setTotalPages(response.last_page)
-      } catch (error) {
-        console.error(error)      
+      async function loadData() {
+        setIsLoading(true)
+        try {
+          const response = await ArticleService().all({page:parseInt(searchParams.get('page')!), type: 'Acara Umum'})
+          setData(response.data)
+          setTotalPages(response.last_page)
+        } catch (error) {
+          console.error(error)      
+        }
+        setIsLoading(false)
       }
-      setIsLoading(false)
     }
   }, [searchParams, setSearchParams])
   

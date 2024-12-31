@@ -16,21 +16,22 @@ export const News = () => {
   useEffect(()=>{
     if(!searchParams.get('page')) {
       setSearchParams({page:'1'})
-    }
-
-    loadData()
-
-    async function loadData() {
-      setIsLoading(true)
-      try {
-        const response = await ArticleService().all({page:parseInt(searchParams.get('page')!), type: 'Berita Umum'})
-        setData(response.data)
-        setTotalPages(response.last_page)
-      } catch (error) {
-        console.error(error)      
+    } else {
+      loadData()
+  
+      async function loadData() {
+        setIsLoading(true)
+        try {
+          const response = await ArticleService().all({page:parseInt(searchParams.get('page')!), type: 'Berita Umum'})
+          setData(response.data)
+          setTotalPages(response.last_page)
+        } catch (error) {
+          console.error(error)      
+        }
+        setIsLoading(false)
       }
-      setIsLoading(false)
     }
+
   }, [searchParams, setSearchParams])
   
   const onPageChange = (page:number) => {
