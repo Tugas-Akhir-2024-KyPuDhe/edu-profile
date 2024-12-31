@@ -11,6 +11,7 @@ import { Header, MyFooter } from "./components";
 function App() {
 
   const [schoolConfig, setSchoolConfig] = useState<School>()
+  const [isLoading, setIsLoading] = useState(true) 
 
 
   useEffect(()=>{
@@ -18,21 +19,24 @@ function App() {
     loadData()
 
     async function loadData() {
+      setIsLoading(true)
+
       try {
         const response = await SchoolService().get()
 
         setSchoolConfig(response.data)
         
         localStorage.setItem("school_config", JSON.stringify(response.data))
-
       } catch (error) {
         console.error(error)
+      } finally {
+        setIsLoading(false)
       }
     }
 
   }, [])
 
-  return (
+  return isLoading ? '' : (
     <>
       <Favicon url={schoolConfig?.logo.url || ''} />
       <Header />
