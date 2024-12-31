@@ -4,6 +4,7 @@ import { Fajusek } from "../../interfaces";
 import { JurusanService } from "../../services";
 import { Spinner } from "flowbite-react";
 import { useParams } from "react-router-dom";
+import LightGallery from "lightgallery/react";
 
 export const Jurusan = () => {
 
@@ -36,10 +37,15 @@ export const Jurusan = () => {
             <Spinner size="lg"/>
           </div>
         ) : (
-          <div className="flex flex-col gap-3">
-            <h2 className="text-lg font-medium">{data?.description}</h2>
-            {data?.media.map(media=><img  src={media.url} alt={data?.name}/>)}
-          </div>
+        <div>
+          <h2 className="text-md">{data?.description}</h2>
+
+          <LightGallery elementClassNames="grid grid-cols-2 md:grid-cols-3 gap-4 mt-4">
+            {data?.media.map(media=>(
+                <img className="h-auto max-w-full rounded-lg hover:cursor-pointer" src={media.url}/>
+            ))}
+          </LightGallery>
+        </div>
         )}
       </div>
       
