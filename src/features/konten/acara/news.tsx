@@ -23,7 +23,7 @@ export const News = () => {
     async function loadData() {
       setIsLoading(true)
       try {
-        const response = await ArticleService().all({page:parseInt(searchParams.get('page')!)})
+        const response = await ArticleService().all({page:parseInt(searchParams.get('page')!), type: 'Acara Umum'})
         setData(response.data)
         setTotalPages(response.last_page)
       } catch (error) {
