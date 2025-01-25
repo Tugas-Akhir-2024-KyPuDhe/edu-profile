@@ -40,7 +40,7 @@ export const News = () => {
       
       <div className="flex overflow-x-auto sm:justify-center">
         <Link to="/konten/berita">
-        <Button>
+        <Button className='bg-[#1E7DC1]'>
           Lihat Selengkapnya
         </Button>
         </Link>

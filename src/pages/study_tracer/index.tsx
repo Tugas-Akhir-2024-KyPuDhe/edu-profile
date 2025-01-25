@@ -128,7 +128,7 @@ export const StudyTracer = () => {
           </div>
           <TextInput id="permasalahan" type="text" placeholder="Masukkan permasalahan..."  />
         </div>
-        <Button type="button">Submit</Button>
+        <Button type="button" className='bg-[#1E7DC1]'>Submit</Button>
       </form>
     </>
   );

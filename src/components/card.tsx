@@ -16,13 +16,13 @@ export const MyCard = (prop: {title: string , description: string , href: string
         <span className="text-xs font-semibold">{showFormattedDate(prop.date)}</span>
       </div>
 
-      <h5 className="lg:text-lg font-bold tracking-tight text-gray-900 dark:text-white line-clamp-2">
+      <h5 className="lg:text-lg font-bold tracking-tight text-gray-900 dark:text-slate-100 line-clamp-2">
         {prop.title}
       </h5>
       <p className="text-sm lg:text-md font-normal text-gray-700 dark:text-gray-400 line-clamp-3">{parse(prop.description||'')}</p>
 
       <Link to={prop.href}>
-        <Button>
+        <Button className='bg-[#1E7DC1]'>
           Selengkapnya
           <BiChevronRight className="ml-2 h-5 w-5" />
         </Button>

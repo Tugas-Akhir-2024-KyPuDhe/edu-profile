@@ -45,7 +45,7 @@ export const Ekskul = () => {
                   <Sidebar.ItemGroup>
                     {
                       data.map((ekskul,index)=>(
-                        <Sidebar.Item href="#" onClick={()=>setActiveTab(index)} active={index == activeTab ? true : false} theme={{active:'bg-green-300 dark:bg-green-700'}} className={'capitalize'}>
+                        <Sidebar.Item href="#" onClick={()=>setActiveTab(index)} active={index == activeTab ? true : false} theme={{active:'bg-[#1E7DC1] text-slate-100 hover:bg-[#1E7DC1]'}} className={'capitalize'}>
                           {ekskul.name}                        
                         </Sidebar.Item>
                       ))

@@ -19,7 +19,7 @@ export function MyFooter() {
               src={schoolConfig.logo.url || ''}
               alt="Logo"
               name={schoolConfig.name}
-              theme={{span: "self-center whitespace-nowrap text-lg sm:text-xl font-semibold text-gray-800 dark:text-white"}}
+              theme={{span: "self-center whitespace-nowrap text-lg sm:text-xl font-semibold text-gray-800 dark:text-slate-100"}}
             />
             <h4>{schoolConfig.address}</h4>
             <a href={"tel:"+schoolConfig.telp} className="flex gap-2 items-center text-sm text-gray-500 hover:underline"> <FaPhone size={20} />  {schoolConfig.telp}</a>

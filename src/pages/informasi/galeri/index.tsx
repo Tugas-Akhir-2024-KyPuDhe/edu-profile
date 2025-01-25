@@ -48,7 +48,7 @@ export const Galeri = () => {
                 <>
                     <div className="flex items-center justify-center flex-wrap">
                         {data.map((gallery, index)=>(
-                            <button key={gallery.id} type="button" className={"border bg-white focus:ring-4 focus:outline-none  rounded-full text-base font-medium px-5 py-2.5 text-center me-3 mb-3 " + (selectedCategory == index ? "hover:text-white text-green-500 border-green-300 hover:bg-green-500 focus:ring-green-300" : "text-gray-900 border-white hover:border-gray-200 focus:ring-gray-300")} onClick={()=>selectCategory(index)}>{gallery.name}</button>
+                            <button key={gallery.id} type="button" className={"border bg-white focus:ring-4 focus:outline-none  rounded-full text-base font-medium px-5 py-2.5 text-center me-3 mb-3 " + (selectedCategory == index ? "hover:text-slate-100 text-[#1E7DC1] border-[#1E7DC1] hover:bg-[#1E7DC1] focus:ring-[#1E7DC1]" : "text-gray-900 border-white hover:border-gray-200 focus:ring-gray-300")} onClick={()=>selectCategory(index)}>{gallery.name}</button>
                         ))}
                     </div>
                 
