@@ -1,9 +1,12 @@
 import axios, { AxiosResponse } from "axios";
 import { GetConfigSchool, GetStatisticSchool } from "../interfaces/responses";
+import { FormTracer } from "../interfaces/school";
+import { TracerPostResponse } from "../interfaces/responses/school";
 
 interface SchoolService {
     get: () => Promise<GetConfigSchool>;
     statistics: () => Promise<GetStatisticSchool>;
+    tracer: (data: FormTracer) => Promise<TracerPostResponse>;
 }
 
 const SchoolService = (): SchoolService => {
@@ -33,9 +36,24 @@ const SchoolService = (): SchoolService => {
     }
   };
 
+  const tracer = async (data : FormTracer): Promise<TracerPostResponse> => {
+    try {
+      const response: AxiosResponse = await axios.post(
+        `${import.meta.env.VITE_API_URL}/api/study-tracer/store`,
+        data
+      );
+      
+      return response.data;
+    } catch (error) {
+      console.error("Error fetch all:", error);
+      throw error;
+    }
+  };
+
   return {
     get,
-    statistics
+    statistics,
+    tracer
   };
 };
 

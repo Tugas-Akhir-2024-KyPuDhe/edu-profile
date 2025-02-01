@@ -24,3 +24,23 @@ export interface Statistic {
     major: number,
     alumni: number
 }
+
+export interface FormTracer {
+    "name": string
+    "birth_place": string,
+    "birth_date": string,
+    "ttl": string,
+    "gender": string
+    "address": string
+    "addressNow": string,
+    "phone": string
+    "email": string
+    "startYear": string
+    "endYear": string
+    "employmentStatus": string
+    "institutionName": string,
+    "institutionAddress": string,
+    "isSatisfactionMet": string,
+    "disSatisfactionFactors": string,
+    "studyIssues": string
+  }
