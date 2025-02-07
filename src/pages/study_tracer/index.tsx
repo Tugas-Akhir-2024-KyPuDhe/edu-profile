@@ -131,7 +131,7 @@ export const StudyTracer = () => {
           <div className="mb-2 block">
             <Label htmlFor="No HP" value="No HP" />
           </div>
-          <TextInput required id="No HP" type="text" placeholder="Masukkan no hp..."  onChange={(e) => setFormData({...formData, 'phone': e.target.value})} value={formData.phone}/>
+          <TextInput required id="No HP" type="number" placeholder="Masukkan no hp..."  onChange={(e) => setFormData({...formData, 'phone': e.target.value})} value={formData.phone}/>
         </div>
         <div>
           <div className="mb-2 block">
@@ -143,13 +143,13 @@ export const StudyTracer = () => {
           <div className="mb-2 block">
             <Label htmlFor="Tahun Masuk" value="Tahun Masuk" />
           </div>
-          <TextInput required id="Tahun Masuk" type="text" placeholder="Masukkan Tahun Masuk..."  onChange={(e) => setFormData({...formData, 'startYear': e.target.value})} value={formData.startYear}/>
+          <TextInput required id="Tahun Masuk" type="number" placeholder="Masukkan Tahun Masuk..."  onChange={(e) => setFormData({...formData, 'startYear': e.target.value})} value={formData.startYear}/>
         </div>
         <div>
           <div className="mb-2 block">
             <Label htmlFor="Tahun Lulus" value="Tahun Lulus" />
           </div>
-          <TextInput required id="Tahun Lulus" type="text" placeholder="Masukkan Tahun Lulus..."  onChange={(e) => setFormData({...formData, 'endYear': e.target.value})} value={formData.endYear}/>
+          <TextInput required id="Tahun Lulus" type="number" placeholder="Masukkan Tahun Lulus..."  onChange={(e) => setFormData({...formData, 'endYear': e.target.value})} value={formData.endYear}/>
         </div>
         <div>
           <div className="mb-2 block">
