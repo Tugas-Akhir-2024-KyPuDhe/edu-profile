@@ -39,12 +39,12 @@ export const Fasilitas = () => {
           ) : (
 
             <div className="flex gap-10">
-              <Sidebar className="md:flex-none md:w-64">
+              <Sidebar className="md:flex-none md:w-64 " theme={{root:{inner:"h-full overflow-y-auto overflow-x-hidden bg-[#1E7DC1] p-5"}}}>
                 <Sidebar.Items>
                   <Sidebar.ItemGroup>
                     {
                       data.map((fasilitas,index)=>(
-                        <Sidebar.Item href="#" onClick={()=>setActiveTab(index)} active={index == activeTab ? true : false} theme={{active:'bg-[#1E7DC1] text-slate-100 hover:bg-[#1E7DC1]'}} className={'capitalize'}>
+                        <Sidebar.Item href="#" onClick={()=>setActiveTab(index)} active={index == activeTab ? true : false} theme={{active:'bg-slate-100 text-slate-900 hover:bg-slate-100', base:"flex items-center justify-center p-2 text-base font-normal text-slate-200 hover:bg-slate-100 hover:text-slate-900"}} className={'capitalize'}>
                           {fasilitas.name}                        
                         </Sidebar.Item>
                       ))
