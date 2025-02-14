@@ -38,7 +38,7 @@ function App() {
 
   return isLoading ? '' : (
     <>
-      <Favicon url={schoolConfig?.logo.url || ''} />
+      <Favicon url={schoolConfig?.logo?.url ?? ''} />
       <Header />
       <Routes>
         <Route path="/" element={<HomePage />} />
