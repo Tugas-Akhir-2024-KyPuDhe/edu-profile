@@ -6,6 +6,8 @@ import { Spinner } from "flowbite-react";
 import { useParams } from "react-router-dom";
 import LightGallery from "lightgallery/react";
 
+import parse from 'html-react-parser'
+
 export const Jurusan = () => {
 
   const [data, setData] = useState<Fajusek>()
@@ -38,7 +40,7 @@ export const Jurusan = () => {
           </div>
         ) : (
         <div>
-          <h2 className="text-md">{data?.description}</h2>
+          <h2 className="text-md">{parse(data!.description)}</h2>
 
           <LightGallery elementClassNames="grid grid-cols-2 md:grid-cols-3 gap-4 mt-4">
             {data?.media.map(media=>(

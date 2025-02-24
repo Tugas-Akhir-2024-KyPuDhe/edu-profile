@@ -6,6 +6,8 @@ import { EkstrakurikulerService } from "../../services";
 import { Sidebar, Spinner } from "flowbite-react";
 import LightGallery from 'lightgallery/react';
 
+import parse from 'html-react-parser'
+
 export const Ekskul = () => {
 
   const [data, setData] = useState<Fajusek[]>([])
@@ -54,7 +56,7 @@ export const Ekskul = () => {
                 </Sidebar.Items>
               </Sidebar>
               <div className="flex-auto">
-                <p>{data[activeTab].description}</p>
+                <p>{parse(data[activeTab].description)}</p>
 
                 <LightGallery elementClassNames="grid grid-cols-2 md:grid-cols-4 gap-4 mt-4">
                   {data[activeTab].media.map(media=>(
