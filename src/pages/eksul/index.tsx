@@ -41,6 +41,8 @@ export const Ekskul = () => {
             </div>
           ) : (
 
+            data.length > 0 ? (
+
             <div className="flex gap-10">
               <Sidebar className="md:flex-none md:w-64 " theme={{root:{inner:"h-full overflow-y-auto overflow-x-hidden bg-[#1E7DC1] p-5"}}}>
                 <Sidebar.Items>
@@ -65,6 +67,8 @@ export const Ekskul = () => {
                 </LightGallery>
               </div>
             </div>
+
+            ) : <img className='w-1/3 mx-auto' src='./src/assets/empty-data.svg' />
 
           )}
           

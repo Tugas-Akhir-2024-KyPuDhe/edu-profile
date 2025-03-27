@@ -34,17 +34,23 @@ export const News = () => {
     </div>
   ) : (
     <>
+    {data.length > 0 ? (
       <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
         {data.map(article=><MyCard key={article.id} image={article.banner?.url || "https://flowbite-react.com/images/blog/image-1.jpg"} title={article.title} description={article.description} href={'/konten/berita/'+article.uuid} badge={article.category||''} date={article.createdAt}/>)}
       </div>
+
+    ) : <img className='w-1/3 mx-auto' src='./src/assets/empty-data.svg' /> }
       
-      <div className="flex overflow-x-auto sm:justify-center">
-        <Link to="/konten/berita">
-        <Button className='bg-[#1E7DC1]'>
-          Lihat Selengkapnya
-        </Button>
-        </Link>
-      </div>
+      {data.length > 0 ? (
+        <div className="flex overflow-x-auto sm:justify-center">
+          <Link to="/konten/berita">
+          <Button className='bg-[#1E7DC1]'>
+            Lihat Selengkapnya
+          </Button>
+          </Link>
+        </div>
+      ) : <></>  }
+      
     </>
   )
 }

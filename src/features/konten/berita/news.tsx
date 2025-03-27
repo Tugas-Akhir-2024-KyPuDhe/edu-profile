@@ -43,14 +43,16 @@ export const News = () => {
       <Spinner size="lg"/>
     </div>
   ) : (
-    <>
-      <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-        {data.map(article=><MyCard key={article.id} image={article.banner?.url || "https://flowbite-react.com/images/blog/image-1.jpg"} title={article.title} description={article.description} href={'/konten/berita/'+article.uuid} badge={article.category||''} date={article.createdAt}/>)}
-      </div>
-      
-      <div className="flex overflow-x-auto sm:justify-center">
-        <Pagination currentPage={parseInt(searchParams.get('page')!)} totalPages={totalPages} onPageChange={onPageChange} showIcons previousLabel="Sebelumnya" nextLabel="Selanjutnya"/>
-      </div>
-    </>
+    data.length > 0 ? (
+      <>
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+          {data.map(article=><MyCard key={article.id} image={article.banner?.url || "https://flowbite-react.com/images/blog/image-1.jpg"} title={article.title} description={article.description} href={'/konten/berita/'+article.uuid} badge={article.category||''} date={article.createdAt}/>)}
+        </div>
+        
+        <div className="flex overflow-x-auto sm:justify-center">
+          <Pagination currentPage={parseInt(searchParams.get('page')!)} totalPages={totalPages} onPageChange={onPageChange} showIcons previousLabel="Sebelumnya" nextLabel="Selanjutnya"/>
+        </div>
+      </>
+    ) : <img className='w-1/3 mx-auto' src='../src/assets/empty-data.svg' />
   )
 }
