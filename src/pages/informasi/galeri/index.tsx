@@ -59,7 +59,7 @@ export const Galeri = () => {
                         ))}
                     </LightGallery>
                 </>
-                ) : <img className='w-1/3 mx-auto' src='../src/assets/empty-data.svg' />
+                ) : <img className='w-1/3 mx-auto' src='../empty-data.svg' />
             )}
 
       </div>

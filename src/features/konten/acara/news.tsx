@@ -53,6 +53,6 @@ export const News = () => {
         <Pagination currentPage={parseInt(searchParams.get('page')!)} totalPages={totalPages} onPageChange={onPageChange} showIcons previousLabel="Sebelumnya" nextLabel="Selanjutnya"/>
       </div>
     </>
-    ) : <img className='w-1/3 mx-auto' src='../src/assets/empty-data.svg' />
+    ) : <img className='w-1/3 mx-auto' src='../empty-data.svg' />
   )
 }

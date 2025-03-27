@@ -39,7 +39,7 @@ export const News = () => {
         {data.map(article=><MyCard key={article.id} image={article.banner?.url || "https://flowbite-react.com/images/blog/image-1.jpg"} title={article.title} description={article.description} href={'/konten/berita/'+article.uuid} badge={article.category||''} date={article.createdAt}/>)}
       </div>
 
-    ) : <img className='w-1/3 mx-auto' src='./src/assets/empty-data.svg' /> }
+    ) : <img className='w-1/3 mx-auto' src='./empty-data.svg' /> }
       
       {data.length > 0 ? (
         <div className="flex overflow-x-auto sm:justify-center">

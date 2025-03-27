@@ -47,7 +47,7 @@ export const MyCarousel = ()=> {
             </div>
             ))}
           </Carousel>
-        ) : <img className='w-1/3 mx-auto mt-10' src='./src/assets/empty-data.svg' />
+        ) : <img className='w-1/3 mx-auto mt-10' src='./empty-data.svg' />
       }
       
     </div>
