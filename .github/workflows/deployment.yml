@@ -20,7 +20,7 @@ jobs:
       - name: Copy files to VPS
         uses: appleboy/scp-action@master
         with:
-          source: ./dist/*
+          source: ./dist/assets/*,empty-data.svg,index.html,vite.svg
           target: /var/www/html/
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
